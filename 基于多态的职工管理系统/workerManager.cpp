@@ -189,6 +189,42 @@ void WorkerManager::Show_Employee() {
 
 	system("pause");
 }
+//删除职工信息
+void WorkerManager::Delete_Employee() {
+	if (m_FileIsEmpty) {
+		cout << "你还没有创建过名单哦" << endl;
+	}
+	else {
+		//按照职工编号删除
+		cout << "请输入你要删除的员工的编号：" << endl;
+		int target_id = 0;
+		cin >> target_id;
+		int index = IsExist(target_id);
+		if (index == -1) {
+			cout << "不存在编号为" << target_id << "的职工，请检查输入的编号是否正确！" << endl;
+		}
+		else {
+			for (size_t i = index; i < m_TotalEmployeeNum - 1; ++i) {
+				m_EmployeeArray[i] = m_EmployeeArray[i + 1];
+			}
+			m_TotalEmployeeNum--;
+			save();
+			cout << "删除成功！" << endl;
+		}
+	}
+	system("pause");
+}
+//判断某职工是否存在
+int WorkerManager::IsExist(int id) {
+	int index = -1;
+	for (int i = 0; i < m_TotalEmployeeNum; ++i) {
+		if (m_EmployeeArray[i]->m_id == id) {
+			index = i;
+			break;
+		}
+	}
+	return index;
+}
 //退出程序
 void WorkerManager::ExitSystem()
 {

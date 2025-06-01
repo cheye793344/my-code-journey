@@ -42,7 +42,7 @@ int main()
 			break;
 
 		case 3:  //É¾³ý
-
+			wm.Delete_Employee();
 			break;
 
 		case 4:  //ÐÞ¸Ä

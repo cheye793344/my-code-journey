@@ -31,6 +31,9 @@ public:
 
 	void Show_Employee();//显示职工信息
 
+	void Delete_Employee();//删除职工信息
+	int IsExist(int id);//判断某职工是否存在
+
 	~WorkerManager();//析构函数
 
 	void ExitSystem();//退出程序
