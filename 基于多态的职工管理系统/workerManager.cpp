@@ -355,6 +355,34 @@ void WorkerManager::Sort_Employee() {
 		Show_Employee();
 	}
 }
+//清空文件
+void WorkerManager::Clean_File() {
+	cout << "确认清空？" << endl;
+	cout << "1.确认" << endl;
+	cout << "2.取消" << endl;
+
+	int op = 0;
+	cin >> op;
+
+	if (op == 1) {
+		ofstream ofs(FILENAME, ios::trunc);
+		ofs.close();
+
+		if (m_EmployeeArray != NULL) {
+			for (size_t i = 0; i < m_TotalEmployeeNum; ++i) {
+				if (m_EmployeeArray[i] != NULL) {
+					delete m_EmployeeArray[i];
+				}
+			}
+			m_TotalEmployeeNum = 0;
+			delete[] m_EmployeeArray;
+			m_EmployeeArray = NULL;
+			m_FileIsEmpty = true;
+		}
+		cout << "已清空所有数据" << endl;
+	}
+	system("pause");
+}
 //退出程序
 void WorkerManager::ExitSystem()
 {

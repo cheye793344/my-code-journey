@@ -58,7 +58,7 @@ int main()
 			break;
 
 		case 7:  //Çå¿Õ
-
+			wm.Clean_File();
 			break;
 		}
 	}

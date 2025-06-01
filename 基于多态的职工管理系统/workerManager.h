@@ -40,6 +40,8 @@ public:
 
 	void Sort_Employee();//对职工进行排序
 
+	void Clean_File();//清空文件
+
 	~WorkerManager();//析构函数
 
 	void ExitSystem();//退出程序
