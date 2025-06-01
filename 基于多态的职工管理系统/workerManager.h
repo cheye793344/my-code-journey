@@ -36,6 +36,8 @@ public:
 
 	void Modify_Employee();//修改职工信息
 
+	void Find_Employee();//查找职工信息
+
 	~WorkerManager();//析构函数
 
 	void ExitSystem();//退出程序

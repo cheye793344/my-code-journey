@@ -50,7 +50,7 @@ int main()
 			break;
 
 		case 5:  //≤È’“
-
+			wm.Find_Employee();
 			break;
 
 		case 6:   //≈≈–Ú

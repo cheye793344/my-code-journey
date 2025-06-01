@@ -214,7 +214,7 @@ void WorkerManager::Delete_Employee() {
 	}
 	system("pause");
 }
-//判断某职工是否存在
+//修改职工信息
 void WorkerManager::Modify_Employee() {
 	if (m_FileIsEmpty) {
 		cout << "你还未创建过名单哦" << endl;
@@ -261,6 +261,7 @@ void WorkerManager::Modify_Employee() {
 	}
 	system("pause");
 }
+//判断职工是否存在
 int WorkerManager::IsExist(int id) {
 	int index = -1;
 	for (int i = 0; i < m_TotalEmployeeNum; ++i) {
@@ -270,6 +271,50 @@ int WorkerManager::IsExist(int id) {
 		}
 	}
 	return index;
+}
+//查找职工信息
+void WorkerManager::Find_Employee() {
+	if (m_FileIsEmpty) {
+		cout << "你还没有创建过名单哦" << endl;
+	}
+	else {
+		cout << "请选择查找方式：" << endl;
+		cout << "1.按职工编号查找" << endl;
+		cout << "2.按职工姓名查找" << endl;
+
+		int op;
+		cin >> op;
+		if (op == 1) {
+			cout << "请输入要查找的职工的编号：" << endl;
+			int target_id = 0;
+			cin >> target_id;
+			int index = IsExist(target_id);
+			if (index != -1) {
+				cout << "查找成功！" << endl;
+				m_EmployeeArray[index]->ShowInfo();
+			}
+			else {
+				cout << "未找到该名职工，请检查输入的编号是否正确！" << endl;
+			}
+		}
+		else if (op == 2) {
+			string target_name = "";
+			cout << "请输入要查找的职工姓名：" << endl;
+			cin >> target_name;
+			bool is_found = false;
+			for (size_t i = 0; i < m_TotalEmployeeNum; ++i) {
+				if (m_EmployeeArray[i]->m_name == target_name) {
+					is_found = true;
+					cout << "查找成功！" << endl;
+					m_EmployeeArray[i]->ShowInfo();
+				}
+			}
+			if (is_found == false) {
+				cout << "不存在该名员工，请确认姓名输入是否正确！";
+			}
+		}
+	}
+	system("pause");
 }
 //退出程序
 void WorkerManager::ExitSystem()
