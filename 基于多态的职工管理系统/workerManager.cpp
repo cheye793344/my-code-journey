@@ -30,8 +30,7 @@ WorkerManager::WorkerManager()
 	}
 
 	//存在已有名单
-	int num = get_EmploeeNum();
-	m_TotalEmployeeNum = num;
+	m_TotalEmployeeNum = get_EmploeeNum();
 	cout << "已有" << m_TotalEmployeeNum << "条职工信息" << endl;
 	m_EmployeeArray = new Worker * [m_TotalEmployeeNum];
 	init_EmployeeArray();
@@ -53,25 +52,24 @@ void WorkerManager::Show_Menu()
 //添加职工信息
 void WorkerManager::Add_Employee()
 {
-	int AddNum = 0;
 	cout << "请输入需要添加的职工人数：" << endl;
-	cin >> AddNum;
-	if (AddNum <= 0) { cout << "请输入正确的人数！"; }
+	cin >> m_NewEmployeeNum;
+	if (m_NewEmployeeNum <= 0) { cout << "请输入正确的人数！"; }
 	else
 	{
-		int NewSize = m_TotalEmployeeNum + AddNum;//计算所需空间大小
+		int NewSize = m_TotalEmployeeNum + m_NewEmployeeNum;//计算所需空间大小
 		Worker** NewSpace = new Worker* [NewSize];//堆区开辟新空间
 
 		//拷贝原数据
 		if (m_EmployeeArray != NULL)
 		{
-			for (int i = 0; i < m_NewEmployeeNum; ++i) {
+			for (int i = 0; i < m_TotalEmployeeNum; ++i) {
 				NewSpace[i] = m_EmployeeArray[i];
 			}
 		}
 
 		//添加新的职工信息
-		for (int i = 0; i < AddNum; ++i) {
+		for (int i = 0; i < m_NewEmployeeNum; ++i) {
 			int m_id;
 			string m_name;
 			int m_departureid;
@@ -97,11 +95,13 @@ void WorkerManager::Add_Employee()
 			}
 
 			//把新增的信息存入新数组中
-			NewSpace[m_TotalEmployeeNum + i] = worker;
+				NewSpace[m_TotalEmployeeNum + i] = worker;
 		}
 
 		//释放原数组指向的内存
-		delete[]m_EmployeeArray;
+		if (m_EmployeeArray != NULL) {
+			delete[]m_EmployeeArray;
+		}
 
 		//使原数组指向新数组
 		m_EmployeeArray = NewSpace;
@@ -115,7 +115,7 @@ void WorkerManager::Add_Employee()
 		m_FileIsEmpty = false;
 
 		//提示成功添加人数
-		cout << "成功添加 " << AddNum << " 名员工！" << endl;
+		cout << "成功添加 " << m_NewEmployeeNum << " 名员工！" << endl;
 	}
 }
 //保存名单文件
@@ -175,6 +175,19 @@ void WorkerManager::init_EmployeeArray() {
 		 m_EmployeeArray[index] = worker;
 		++index;
 	}
+}
+//显示职工信息
+void WorkerManager::Show_Employee() {
+	if (m_FileIsEmpty) {
+		cout << "你还没有创建过名单哦" << endl;
+	}
+	else {
+		for (size_t i = 0; i < m_TotalEmployeeNum; i++) {
+			m_EmployeeArray[i]->ShowInfo();
+		}
+	}
+
+	system("pause");
 }
 //退出程序
 void WorkerManager::ExitSystem()

@@ -9,10 +9,10 @@ Manager::Manager(int id, string name, int departureid)
 
 void Manager::ShowInfo()
 {
-	cout << "职工编号：" << m_id
-		<< "职工姓名：" << m_name
-		<< "部门编号：" << m_departureid
-		<< "部门名称：" << GetDepartureName()
+	cout << "职工编号：" << m_id << " "
+		<< "职工姓名：" << m_name << " "
+		<< "部门编号：" << m_departureid << " "
+		<< "部门名称：" << GetDepartureName() << " "
 		<< "岗位职责：完成老板下放的任务，并且下放任务给员工" << endl;
 }
 

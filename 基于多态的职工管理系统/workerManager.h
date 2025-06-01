@@ -27,7 +27,9 @@ public:
 
 	int get_EmploeeNum();//获取已存档人数
 
-	void init_EmployeeArray();
+	void init_EmployeeArray();//初始化职工数组
+
+	void Show_Employee();//显示职工信息
 
 	~WorkerManager();//析构函数
 

@@ -11,9 +11,9 @@ public:
 
 	virtual string GetDepartureName() = 0;
 
-	int m_id;
+	int m_id = 0;
 	string m_name;
-	int m_departureid;
+	int m_departureid = 0;
 
 
 };

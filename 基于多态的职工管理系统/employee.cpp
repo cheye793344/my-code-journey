@@ -9,10 +9,10 @@ Employee::Employee(int id, string name, int departureid)
 
 void Employee::ShowInfo()
 {
-	cout << "职工编号：" << m_id
-		<< "职工姓名：" << m_name
-		<< "部门编号：" << m_departureid
-		<< "部门名称：" << GetDepartureName()
+	cout << "职工编号：" << m_id << " "
+		<< "职工姓名：" << m_name << " "
+		<< "部门编号：" << m_departureid << " "
+		<< "部门名称：" << GetDepartureName() << " "
 		<< "岗位职责：完成经理下放的任务" << endl;
 }
 

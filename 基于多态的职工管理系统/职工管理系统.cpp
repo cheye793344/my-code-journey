@@ -38,7 +38,7 @@ int main()
 			break;
 
 		case 2:  //ÏÔÊ¾
-
+			wm.Show_Employee();
 			break;
 
 		case 3:  //É¾³ı
