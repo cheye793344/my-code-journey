@@ -117,6 +117,7 @@ void WorkerManager::Add_Employee()
 		//提示成功添加人数
 		cout << "成功添加 " << m_NewEmployeeNum << " 名员工！" << endl;
 	}
+	system("pause");
 }
 //保存名单文件
 void WorkerManager::save()
@@ -315,6 +316,44 @@ void WorkerManager::Find_Employee() {
 		}
 	}
 	system("pause");
+}
+//对职工进行排序
+void WorkerManager::Sort_Employee() {
+	if (m_FileIsEmpty) {
+		cout << "你还没有创建过名单哦" << endl;
+		system("pause");
+	}
+	else {
+		cout << "请选择排序方式：" << endl;
+		cout << "1.按职工编号升序" << endl;
+		cout << "2.按职工编号降序" << endl;
+
+		int op = 0;
+		cin >> op;
+		for (size_t i = 0; i < m_TotalEmployeeNum; ++i) {
+			size_t min_or_max = i;
+			for (size_t j = i + 1; j < m_TotalEmployeeNum; j++){
+				if (op == 1) {
+					if (m_EmployeeArray[min_or_max]->m_id > m_EmployeeArray[j]->m_id) {
+						min_or_max = j;
+					}
+				}
+				else {
+					if (m_EmployeeArray[min_or_max]->m_id < m_EmployeeArray[j]->m_id) {
+						min_or_max = j;
+					}
+				}
+			}
+			if (i != min_or_max) {
+				Worker* temp = m_EmployeeArray[i];
+				m_EmployeeArray[i] = m_EmployeeArray[min_or_max];
+				m_EmployeeArray[min_or_max] = temp;
+			}
+		}
+		cout << "排序完成！" << endl;
+		save();
+		Show_Employee();
+	}
 }
 //退出程序
 void WorkerManager::ExitSystem()

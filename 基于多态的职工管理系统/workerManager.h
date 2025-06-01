@@ -38,6 +38,8 @@ public:
 
 	void Find_Employee();//查找职工信息
 
+	void Sort_Employee();//对职工进行排序
+
 	~WorkerManager();//析构函数
 
 	void ExitSystem();//退出程序

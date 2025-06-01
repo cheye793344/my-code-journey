@@ -54,7 +54,7 @@ int main()
 			break;
 
 		case 6:   //ÅÅÐò
-
+			wm.Sort_Employee();
 			break;
 
 		case 7:  //Çå¿Õ
