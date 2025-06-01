@@ -46,7 +46,7 @@ int main()
 			break;
 
 		case 4:  //ĞŞ¸Ä
-
+			wm.Modify_Employee();
 			break;
 
 		case 5:  //²éÕÒ

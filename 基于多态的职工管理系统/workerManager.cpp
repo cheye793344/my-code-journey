@@ -215,6 +215,52 @@ void WorkerManager::Delete_Employee() {
 	system("pause");
 }
 //判断某职工是否存在
+void WorkerManager::Modify_Employee() {
+	if (m_FileIsEmpty) {
+		cout << "你还未创建过名单哦" << endl;
+	}
+	else {
+		cout << "请输入需要修改的职工的编号：" << endl;
+		int target_id;
+		cin >> target_id;
+		int index = IsExist(target_id);
+		if (index != -1) {
+			delete m_EmployeeArray[index];
+
+			int new_id = 0;
+			string new_name = "";
+			int new_departure_id = 0;
+
+			cout << "请依次输入新的职工编号、职工姓名、部门编号(1.普通职工，2.经理，3.总裁)：" << endl;
+
+			cin >> new_id >> new_name >> new_departure_id;
+			Worker* worker = NULL;
+			switch (new_departure_id) {
+			case 1:
+				worker = new Employee(new_id, new_name, new_departure_id);
+				break;
+
+			case 2:
+				worker = new Manager(new_id, new_name, new_departure_id);
+				break;
+
+			case 3:
+				worker = new Boss(new_id, new_name, new_departure_id);
+				break;
+
+			default:
+				break;
+			}
+			m_EmployeeArray[index] = worker;
+			save();
+			cout << "修改成功！";
+		}
+		else {
+			cout << "没有查找到编号为" << target_id << "的职工，请检查输入是否正确！" << endl;
+		}
+	}
+	system("pause");
+}
 int WorkerManager::IsExist(int id) {
 	int index = -1;
 	for (int i = 0; i < m_TotalEmployeeNum; ++i) {

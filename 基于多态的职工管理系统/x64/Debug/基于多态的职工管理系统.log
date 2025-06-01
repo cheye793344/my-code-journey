@@ -1,9 +1,2 @@
-﻿  boss.cpp
-  employee.cpp
-  manager.cpp
-  manager.h
-  workerManager.cpp
-  职工管理系统.cpp
-  正在生成代码...
-x64\Debug\manager.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+﻿  职工管理系统.cpp
   基于多态的职工管理系统.vcxproj -> C:\Users\YEUWEN\my-code-journey\基于多态的职工管理系统\x64\Debug\基于多态的职工管理系统.exe
