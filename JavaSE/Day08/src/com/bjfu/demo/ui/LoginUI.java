@@ -5,8 +5,8 @@ import javax.swing.plaf.FontUIResource;
 import java.awt.*;
 
 public class LoginUI extends JFrame {
-    private JTextField usernameField;
-    private JPasswordField passwordField;
+    private static JTextField usernameField;
+    private static JPasswordField passwordField;
     private JButton loginButton;
     private JButton registerButton;
 
@@ -68,6 +68,7 @@ public class LoginUI extends JFrame {
         loginButton.setBackground(primaryColor);
         loginButton.setForeground(Color.WHITE);
         panel.add(loginButton);
+        loginButton.addActionListener(e -> login());
 
         // 注册按钮
         registerButton = new JButton("注   册");
@@ -85,11 +86,24 @@ public class LoginUI extends JFrame {
     /**
      * 设置Swing全局字体以支持中文显示
      */
-    public static void setUIFont(FontUIResource f) {
+    public void setUIFont(FontUIResource f) {
         UIManager.put("Button.font", f);
         UIManager.put("Label.font", f);
         UIManager.put("TextField.font", f);
         UIManager.put("PasswordField.font", f);
         UIManager.put("OptionPane.messageFont", f);
     }
+
+        private void login() {
+            String username = usernameField.getText();
+            String password = new String(passwordField.getPassword());
+            if (username.equals("admin") && password.equals("admin")) {
+                JOptionPane.showMessageDialog(this, "登录成功！");
+                new EmployeeManagementUI();
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "用户名或密码错误！");
+            }
+        }
+
 }

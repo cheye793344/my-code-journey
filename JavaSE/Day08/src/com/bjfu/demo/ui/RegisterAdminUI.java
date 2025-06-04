@@ -22,7 +22,6 @@ public class RegisterAdminUI extends JFrame {
         setLocationRelativeTo(null); // 居中显示
 
         // 设置全局字体以支持中文
-        LoginUI.setUIFont(new FontUIResource(customFont));
 
         createAndShowGUI();
     }
