@@ -99,7 +99,7 @@ public class LoginUI extends JFrame {
             String password = new String(passwordField.getPassword());
             if (username.equals("admin") && password.equals("admin")) {
                 JOptionPane.showMessageDialog(this, "登录成功！");
-                new EmployeeManagementUI();
+                new EmployeeManagementUI(username);
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "用户名或密码错误！");

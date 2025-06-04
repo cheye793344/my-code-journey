@@ -1,5 +1,7 @@
 package com.bjfu.demo.ui;
 
+import com.bjfu.demo.bean.Employee;
+
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableModel;
@@ -14,8 +16,8 @@ public class EmployeeManagementUI extends JFrame {
     private int currentPage = 1;
     private final int ROWS_PER_PAGE = 20;
 
-    public EmployeeManagementUI() {
-        setTitle("员工信息管理系统");
+    public EmployeeManagementUI(String username) {
+        setTitle("员工信息管理系统-" + username);
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -26,6 +28,7 @@ public class EmployeeManagementUI extends JFrame {
         initUI();
         setVisible(true);
     }
+
 
     private void initUI() {
         // 第一行面板：输入框 + 搜索按钮 + 添加按钮
@@ -133,6 +136,15 @@ public class EmployeeManagementUI extends JFrame {
                 "添加员工信息", JOptionPane.OK_CANCEL_OPTION);
         if (result == JOptionPane.OK_OPTION) {
             tableModel.addRow(new Object[]{
+                    /*
+                    也可先创建一个Employee对象，再添加到表格中：
+                    Employee employee = new Employee(...);
+                    tableModel.addRow(new Object[]{
+                            employee.getId(),
+                            employee.getName(),
+                            ...
+                    })
+                     */
                     idField.getText(),
                     nameField.getText(),
                     sexField.getText(),
@@ -143,6 +155,11 @@ public class EmployeeManagementUI extends JFrame {
                     salaryField.getText(),
                     departmentField.getText(),
             });
+            JOptionPane.showMessageDialog(this, "员工信息添加成功！");
+            new Employee (idField.getText(), nameField.getText(), sexField.getText(),
+                    Integer.parseInt(ageField.getText()), phoneField.getText(),
+                    positionField.getText(), hiredateField.getText(),
+                    Double.parseDouble(salaryField.getText()), departmentField.getText());
         }
     }
 
@@ -202,8 +219,5 @@ public class EmployeeManagementUI extends JFrame {
         UIManager.put("OptionPane.messageFont", f);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new EmployeeManagementUI());
-    }
 }
 
