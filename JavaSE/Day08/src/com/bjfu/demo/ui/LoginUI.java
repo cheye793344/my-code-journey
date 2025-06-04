@@ -76,6 +76,7 @@ public class LoginUI extends JFrame {
         registerButton.setBackground(Color.WHITE);
         registerButton.setForeground(Color.BLACK);
         panel.add(registerButton);
+        registerButton.addActionListener(e -> new RegisterAdminUI());
 
         add(panel);
         setVisible(true);
