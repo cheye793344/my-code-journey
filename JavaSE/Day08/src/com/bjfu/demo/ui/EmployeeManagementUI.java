@@ -7,8 +7,10 @@ import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class EmployeeManagementUI extends JFrame {
+    private ArrayList<Employee> employeeList = new ArrayList<>();
     private JTextField searchField;
     private JTable table;
     private DefaultTableModel tableModel;
@@ -86,6 +88,7 @@ public class EmployeeManagementUI extends JFrame {
             int selectedRow = table.getSelectedRow();
             if (selectedRow != -1) {
                 tableModel.removeRow(selectedRow);
+                employeeList.remove(selectedRow);
             } else {
                 JOptionPane.showMessageDialog(this, "请先选择一行数据进行删除。");
             }
@@ -135,16 +138,14 @@ public class EmployeeManagementUI extends JFrame {
         int result = JOptionPane.showConfirmDialog(null, panel,
                 "添加员工信息", JOptionPane.OK_CANCEL_OPTION);
         if (result == JOptionPane.OK_OPTION) {
+            Employee employee = new Employee (idField.getText(), nameField.getText(), sexField.getText(),
+                    Integer.parseInt(ageField.getText()), phoneField.getText(),
+                    positionField.getText(), hiredateField.getText(),
+                    Double.parseDouble(salaryField.getText()), departmentField.getText());
+            employeeList.add(employee);
+
             tableModel.addRow(new Object[]{
-                    /*
-                    也可先创建一个Employee对象，再添加到表格中：
-                    Employee employee = new Employee(...);
-                    tableModel.addRow(new Object[]{
-                            employee.getId(),
-                            employee.getName(),
-                            ...
-                    })
-                     */
+
                     idField.getText(),
                     nameField.getText(),
                     sexField.getText(),
@@ -156,10 +157,6 @@ public class EmployeeManagementUI extends JFrame {
                     departmentField.getText(),
             });
             JOptionPane.showMessageDialog(this, "员工信息添加成功！");
-            new Employee (idField.getText(), nameField.getText(), sexField.getText(),
-                    Integer.parseInt(ageField.getText()), phoneField.getText(),
-                    positionField.getText(), hiredateField.getText(),
-                    Double.parseDouble(salaryField.getText()), departmentField.getText());
         }
     }
 
@@ -207,6 +204,17 @@ public class EmployeeManagementUI extends JFrame {
             tableModel.setValueAt(ageField.getText(), row, 6);
             tableModel.setValueAt(hiredateField.getText(), row, 7);
             tableModel.setValueAt(salaryField.getText(), row, 8);
+
+            Employee employee = employeeList.get(row);
+            employee.setId(idField.getText());
+            employee.setName(nameField.getText());
+            employee.setPosition(positionField.getText());
+            employee.setDepartment(departmentField.getText());
+            employee.setPhone(phoneField.getText());
+            employee.setGender(sexField.getText());
+            employee.setAge(Integer.parseInt(ageField.getText()));
+            employee.setHireDate(hiredateField.getText());
+            employee.setSalary(Double.parseDouble(salaryField.getText()));
         }
     }
 
