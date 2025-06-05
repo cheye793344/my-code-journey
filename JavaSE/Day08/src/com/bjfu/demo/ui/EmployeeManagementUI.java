@@ -100,6 +100,8 @@ public class EmployeeManagementUI extends JFrame {
         // 添加组件到主窗口
         add(topPanel, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
+
+        searchButton.addActionListener(e -> searchEmployee());
     }
 
     // 显示添加员工对话框
@@ -217,6 +219,30 @@ public class EmployeeManagementUI extends JFrame {
             employee.setSalary(Double.parseDouble(salaryField.getText()));
         }
     }
+
+
+    // 搜索功能
+    private void searchEmployee() {
+        String searchText = searchField.getText();
+        tableModel.setRowCount(0);
+        for (Employee employee : employeeList) {
+            if (employee.getName().contains(searchText) || employee.getId().contains(searchText)) {
+                tableModel.addRow(new Object[]{
+                        employee.getId(),
+                        employee.getName(),
+                        employee.getGender(),
+                        employee.getAge(),
+                        employee.getPhone(),
+                        employee.getPosition(),
+                        employee.getHireDate(),
+                        employee.getSalary(),
+                        employee.getDepartment(),
+                });
+            }
+        }
+    }
+
+
 
     // 设置Swing全局字体以支持中文
     public static void setUIFont(FontUIResource f) {
