@@ -14,7 +14,7 @@ typedef struct {
 
 void InitList(SqList& L) {
     // 初始化顺序表
-    L.elem = new Book[100]; // 假设最多存储100本书
+    L.elem = new Book[130]; 
     L.length = 0;
 }
 
