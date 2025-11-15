@@ -367,3 +367,27 @@ void FindClass(BiTree& BT, string name) {
         cout << decisions[i] << endl;
     }
 }
+
+//#include "13-基于决策树的股票分类统计.h" 
+int main()
+{
+    SqList L;
+    InitList(L);
+    string infoFilename = "/data/workspace/myshixun/stocks.txt";
+    string detailDir = "/data/workspace/myshixun/detail";
+    ReadFile(L, infoFilename, detailDir);
+
+    BiTree BT;
+    InitTree(BT);
+
+    createDecisionTree(BT, L);
+
+    string stockName;
+    getline(cin, stockName);
+
+    FindClass(BT, stockName);
+
+
+    FreeList(L);
+    return 0;
+}
