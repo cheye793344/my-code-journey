@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{7b3fc9ce-7c86-41f9-8b85-e5711f2cceeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{e868d96e-3cd7-40dd-82eb-4c580d766572}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\DataStructure">
+      <UniqueIdentifier>{d5c38936-a788-4d67-a4fb-3272c5f57824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Entities">
+      <UniqueIdentifier>{0a4f6328-85b5-4d27-9bcb-17752126cc24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Utils">
+      <UniqueIdentifier>{ab1660bf-8dee-4bf0-8aa4-e550bc52d350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{18e3f3c9-5f5b-4861-b300-0aa5743a8f9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\StockManagement">
+      <UniqueIdentifier>{4aa0fbe2-8013-4a56-ad60-40bb4a85d6a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\StockSearch">
+      <UniqueIdentifier>{0fb8b897-099d-49db-85d2-5b315da154bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\StockAnalysis">
+      <UniqueIdentifier>{9631172d-66fd-4c09-897d-7e500dae4d29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\StockKG">
+      <UniqueIdentifier>{126f581f-82d8-40a2-a6e9-b9fa8c1848f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\StockPrediction">
+      <UniqueIdentifier>{44bbe0cb-1b4c-48bc-8445-7ea75a71421a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{cd8d7a6a-5822-4453-bf39-c7b99c88bb5a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\entity.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="data\relation.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="data\stocks.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="new_stocks.txt">
+      <Filter>Data</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="StockStorage.cpp">
+      <Filter>Modules\StockManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="StockDelete.cpp">
+      <Filter>Modules\StockManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="StockUpdate.cpp">
+      <Filter>Modules\StockManagement</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EncodingConverter.h">
+      <Filter>Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FileReader.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Stock.h">
+      <Filter>Core\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSystem.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="DataParser.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="StockManagement.h">
+      <Filter>Modules\StockManagement</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
