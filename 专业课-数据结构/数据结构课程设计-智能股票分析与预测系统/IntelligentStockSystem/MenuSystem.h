@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include<limits>
 class MenuSystem {
 private:
     std::string currentMenu;
@@ -123,11 +123,17 @@ public:
     }
 
     std::string getInput(const std::string& prompt) {
-        std::string input;
-        std::cout << prompt;
-        std::cin >> input;
-        return input;
-    }
+    std::string input;
+    std::cout << prompt;
+    
+    // 关键1：清空 cin 缓冲区中残留的换行符（避免跳过输入）
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    
+    // 关键2：用 getline 读取整行（包括空格），直到按下回车
+    std::getline(std::cin, input);
+    
+    return input;
+}
 
     int getIntInput(const std::string& prompt) {
         int input;

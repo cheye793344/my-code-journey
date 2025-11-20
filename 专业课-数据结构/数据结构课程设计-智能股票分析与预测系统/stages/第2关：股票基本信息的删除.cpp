@@ -1,4 +1,9 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<vector>
+#include<sstream>
+#include<iomanip>
 #define MAXSIZE 5000
 using namespace std;
 
@@ -348,10 +353,10 @@ bool CheckStock(SqList& L, string indusname) {
 int main() {
     SqList L;
     InitList(L);
-    string originInfoFilename = "/data/workspace/myshixun/stocks.txt";
-    string newInfoFilename = "/data/workspace/myshixun/2-股票基本信息的删除/new_stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
-    string newDetailDir = "/data/workspace/myshixun/2-股票基本信息的删除/new_detail";
+    string originInfoFilename = "data/stocks.txt";
+    string newInfoFilename = "data/new_stocks.txt";
+    string detailDir = "data/detail";
+    string newDetailDir = "data/new_detail";
 
     ReadFile(L, originInfoFilename, detailDir);
 

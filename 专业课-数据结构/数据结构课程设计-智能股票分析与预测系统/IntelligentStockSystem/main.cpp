@@ -2,6 +2,7 @@
 #include <string>
 #include "MenuSystem.h"
 #include "StockManagement.h"
+#include "StockSearch.h"
 // 函数声明 - 这些将对应你20关的功能
 namespace StockFunctions {
     // 股票管理功能 (1-3关)
@@ -10,29 +11,29 @@ namespace StockFunctions {
     void stockUpdate();
 
     // 股票查找功能 (4-8关)
-    void binarySearchStock(){}
-    void BSTSearchStock(){}
-    void trieSearchStock(){}
-    void openHashSearchStock(){}
-    void chainHashSearchStock(){}
+    void binarySearchStock();
+    void BSTSearchStock();
+    void trieSearchStock();
+    void openHashSearchStock();
+    void chainHashSearchStock();
 
     // 统计分析功能 (9-13关)
-    void linkedListAnalysis(){}
-    void unionFindAnalysis(){}
-    void heapSortAnalysis(){}
-    void mergeSortAnalysis(){}
-    void decisionTreeAnalysis(){}
+    void linkedListAnalysis();
+    void unionFindAnalysis();
+    void heapSortAnalysis();
+    void mergeSortAnalysis();
+    void decisionTreeAnalysis();
 
     // 知识图谱功能 (14-17关)
-    void entityRecognition(){}
-    void relationExtraction(){}
-    void buildKnowledgeGraph(){}
-    void knowledgeGraphRecommendation(){}
+    void entityRecognition();
+    void relationExtraction();
+    void buildKnowledgeGraph();
+    void knowledgeGraphRecommendation();
 
     // 预测功能 (18-20关)
-    void pearsonCorrelationAnalysis(){}
-    void naiveBayesPrediction(){}
-    void knnPrediction(){}
+    void pearsonCorrelationAnalysis();
+    void naiveBayesPrediction();
+    void knnPrediction();
 }
 
 int main() {

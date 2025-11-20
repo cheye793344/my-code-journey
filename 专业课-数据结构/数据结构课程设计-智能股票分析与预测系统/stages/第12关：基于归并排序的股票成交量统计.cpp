@@ -401,8 +401,8 @@ int main() {
     InitList(L);
     SqListDailyVolume DL;
     InitDailyVolumeList(DL);
-    string infoFile = "/data/workspace/myshixun/stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
+    string infoFile = "data/stocks.txt";
+    string detailDir = "data/detail";
     ReadFile(L, infoFile, detailDir);
 
     string briname;

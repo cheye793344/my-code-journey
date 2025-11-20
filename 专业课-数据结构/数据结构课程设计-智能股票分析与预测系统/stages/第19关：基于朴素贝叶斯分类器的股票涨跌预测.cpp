@@ -10,6 +10,7 @@
 using namespace std;
 
 // 定义最大数组大小
+const double M_PI = 3.14159265358979323846;
 const int MAX_SAMPLES = 1000;
 const int MAX_FEATURES = 3;
 const int MAX_NODE_COUNT = 5;

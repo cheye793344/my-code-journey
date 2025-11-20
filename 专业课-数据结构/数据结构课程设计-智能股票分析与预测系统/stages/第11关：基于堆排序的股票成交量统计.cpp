@@ -284,7 +284,8 @@ void CreatHeap(SqList& L, int& kcn, int& rmn) {
 int main() {
     SqList L;
     InitList(L);  // 初始化顺序表
-    string infoFile = "/data/workspace/myshixun/stocks.txt", detailDir = "/data/workspace/myshixun/detail";
+    string infoFile = "data/stocks.txt";
+    string detailDir = "data/detail";
     ReadFile(L, infoFile, detailDir);  // 加载数据
     string targetInd, targetDate;
     cin >> targetInd >> targetDate;  // 输入目标行业和日期

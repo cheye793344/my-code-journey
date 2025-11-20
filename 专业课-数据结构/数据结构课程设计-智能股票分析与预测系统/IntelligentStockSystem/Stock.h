@@ -87,7 +87,8 @@ struct Stock {
         if (!details.empty()) {
             std::cout << "最近3条交易记录预览:" << std::endl;
             std::cout << "日期\t\t开盘价\t收盘价\t涨跌幅" << std::endl;
-            int count = min(3, static_cast<int>(details.size()));
+            //int count = min(3, static_cast<int>(details.size()));
+            int count = (3 < static_cast<int>(details.size()) ? 3 : static_cast<int>(details.size()));
             for (int i = 0; i < count; ++i) {
                 const auto& detail = details[i];
                 std::cout << detail.date << "\t"

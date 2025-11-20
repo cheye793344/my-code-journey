@@ -356,8 +356,8 @@ double GetASL(HashTable HT, int sumCmp) {
 int main() {
     HashTable HT;
     InitHT(HT);
-    string infoFilename = "/data/workspace/myshixun/stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
+    string infoFilename = "data/stocks.txt";
+    string detailDir = "data/detail";
     int sumCmp = 0; // 在插入的过程中统计比较次数，便于计算ASL
     ReadFile(HT, sumCmp, infoFilename, detailDir);
     string sname; // 输入要查找的股票英文名称

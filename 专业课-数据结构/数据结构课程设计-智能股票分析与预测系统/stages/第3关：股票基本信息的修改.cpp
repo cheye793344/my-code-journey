@@ -1,4 +1,9 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<vector>
+#include<sstream>
+#include<iomanip>
 #define MAXSIZE 5000
 using namespace std;
 

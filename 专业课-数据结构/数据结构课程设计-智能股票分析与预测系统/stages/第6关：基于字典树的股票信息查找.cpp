@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <string>
 #include <cstring>
-#include <dirent.h>
+//#include <dirent.h>
 #include <vector>
 using namespace std;
 
@@ -377,8 +377,8 @@ void Print(stock* s) {
 int main() {
     SqList L;
     InitList(L);
-    string infoFilename = "/data/workspace/myshixun/stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
+    string infoFilename = "data/stocks.txt";
+    string detailDir = "data/detail";
     ReadFile(L, infoFilename, detailDir);
     TNode* root = BuildTree(L);
     string prefix;

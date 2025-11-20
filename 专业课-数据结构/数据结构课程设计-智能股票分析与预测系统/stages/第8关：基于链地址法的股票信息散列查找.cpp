@@ -335,8 +335,8 @@ void Print(LinkList T, string sname) {
 int main() {
     LinkList H[m];
     InitList(H);
-    string infoFilename = "/data/workspace/myshixun/stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
+    string infoFilename = "data/stocks.txt";
+    string detailDir = "data/detail";
     int count = 0;	// 记录元素的总数
     int sumCmp = 0; // 在插入的过程中统计比较次数，便于计算ASL
     count = ReadFile(H, sumCmp, infoFilename, detailDir);

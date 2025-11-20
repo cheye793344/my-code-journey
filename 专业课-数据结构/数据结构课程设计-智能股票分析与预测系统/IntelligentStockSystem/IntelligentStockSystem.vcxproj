@@ -146,18 +146,40 @@
     <Text Include="new_stocks.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BinarySearchStock.cpp" />
+    <ClCompile Include="BSTSearchStock.cpp" />
+    <ClCompile Include="DecisionTreeAnalysis.cpp" />
+    <ClCompile Include="EntityRecognition.cpp" />
+    <ClCompile Include="HashSearchStocks.cpp" />
+    <ClCompile Include="HeapSortAnalysis.cpp" />
+    <ClCompile Include="KNNPrediction.cpp" />
+    <ClCompile Include="KnowledgeGraphBuild.cpp" />
+    <ClCompile Include="KnowledgeGraphCore.cpp" />
+    <ClCompile Include="KnowledgeGraphRecommend.cpp" />
+    <ClCompile Include="LinkedListAnalysis.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MergeSortAnalysis.cpp" />
+    <ClCompile Include="NaiveBayesPrediction.cpp" />
+    <ClCompile Include="PearsonCorrelationAnalysis.cpp" />
+    <ClCompile Include="RelationExtraction.cpp" />
     <ClCompile Include="StockDelete.cpp" />
     <ClCompile Include="StockStorage.cpp" />
     <ClCompile Include="StockUpdate.cpp" />
+    <ClCompile Include="TrieSearchStock.cpp" />
+    <ClCompile Include="UnionFindAnalysis.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataParser.h" />
     <ClInclude Include="EncodingConverter.h" />
     <ClInclude Include="FileReader.h" />
+    <ClInclude Include="KnowledgeGraph.h" />
     <ClInclude Include="MenuSystem.h" />
     <ClInclude Include="Stock.h" />
+    <ClInclude Include="StockAnalysis.h" />
+    <ClInclude Include="StockKG.h" />
     <ClInclude Include="StockManagement.h" />
+    <ClInclude Include="StockPrediction.h" />
+    <ClInclude Include="StockSearch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,9 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<vector>
+#include<sstream>
+#include<iomanip>
 #define MAXSIZE 5000
 using namespace std;
 
@@ -426,8 +431,8 @@ int main() {
     InitBSTree(T2);
     SqList L;
     InitList(L);
-    string infoFilename = "/data/workspace/myshixun/stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
+    string infoFilename = "data/stocks.txt";
+    string detailDir = "data/detail";
     ReadFile(L, infoFilename, detailDir);
     buildTree(T1, L);
     int kcn = 0; // 记录总的关键字比较次数

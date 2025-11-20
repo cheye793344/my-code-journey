@@ -357,8 +357,8 @@ double CalculateTotalChangeRate(SqList& L, int parent[], string targetIndustry, 
 int main() {
     SqList L;
     InitList(L);
-    string infoFilename = "/data/workspace/myshixun/stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
+    string infoFilename = "data/stocks.txt";
+    string detailDir = "data/detail";
     ReadFile(L, infoFilename, detailDir);
     int parent[MAXSIZE];
     string industries[MAXSIZE];

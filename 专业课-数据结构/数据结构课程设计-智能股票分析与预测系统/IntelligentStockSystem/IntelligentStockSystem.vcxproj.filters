@@ -63,6 +63,57 @@
     <ClCompile Include="StockUpdate.cpp">
       <Filter>Modules\StockManagement</Filter>
     </ClCompile>
+    <ClCompile Include="BinarySearchStock.cpp">
+      <Filter>Modules\StockSearch</Filter>
+    </ClCompile>
+    <ClCompile Include="BSTSearchStock.cpp">
+      <Filter>Modules\StockSearch</Filter>
+    </ClCompile>
+    <ClCompile Include="TrieSearchStock.cpp">
+      <Filter>Modules\StockSearch</Filter>
+    </ClCompile>
+    <ClCompile Include="HashSearchStocks.cpp">
+      <Filter>Modules\StockSearch</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedListAnalysis.cpp">
+      <Filter>Modules\StockAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="UnionFindAnalysis.cpp">
+      <Filter>Modules\StockAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="HeapSortAnalysis.cpp">
+      <Filter>Modules\StockAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="MergeSortAnalysis.cpp">
+      <Filter>Modules\StockAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionTreeAnalysis.cpp">
+      <Filter>Modules\StockAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityRecognition.cpp">
+      <Filter>Modules\StockKG</Filter>
+    </ClCompile>
+    <ClCompile Include="RelationExtraction.cpp">
+      <Filter>Modules\StockKG</Filter>
+    </ClCompile>
+    <ClCompile Include="KnowledgeGraphCore.cpp">
+      <Filter>Modules\StockKG</Filter>
+    </ClCompile>
+    <ClCompile Include="KnowledgeGraphBuild.cpp">
+      <Filter>Modules\StockKG</Filter>
+    </ClCompile>
+    <ClCompile Include="KnowledgeGraphRecommend.cpp">
+      <Filter>Modules\StockKG</Filter>
+    </ClCompile>
+    <ClCompile Include="PearsonCorrelationAnalysis.cpp">
+      <Filter>Modules\StockPrediction</Filter>
+    </ClCompile>
+    <ClCompile Include="NaiveBayesPrediction.cpp">
+      <Filter>Modules\StockPrediction</Filter>
+    </ClCompile>
+    <ClCompile Include="KNNPrediction.cpp">
+      <Filter>Modules\StockPrediction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EncodingConverter.h">
@@ -82,6 +133,21 @@
     </ClInclude>
     <ClInclude Include="StockManagement.h">
       <Filter>Modules\StockManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="StockSearch.h">
+      <Filter>Modules\StockSearch</Filter>
+    </ClInclude>
+    <ClInclude Include="StockAnalysis.h">
+      <Filter>Modules\StockAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="StockKG.h">
+      <Filter>Modules\StockKG</Filter>
+    </ClInclude>
+    <ClInclude Include="KnowledgeGraph.h">
+      <Filter>Modules\StockKG</Filter>
+    </ClInclude>
+    <ClInclude Include="StockPrediction.h">
+      <Filter>Modules\StockPrediction</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -322,8 +322,8 @@ StockNode* SplitStockListByRiseFall(SqList& L, const string& induscode, const st
 int main() {
     SqList L;
     InitList(L);
-    string infoFilename = "/data/workspace/myshixun/stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
+    string infoFilename = "data/stocks.txt";
+    string detailDir = "data/detail";
     ReadFile(L, infoFilename, detailDir);
     string induscode;
     string targetdate;

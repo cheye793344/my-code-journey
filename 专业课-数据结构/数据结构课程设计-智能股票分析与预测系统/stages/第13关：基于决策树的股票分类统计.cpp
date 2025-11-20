@@ -1,4 +1,8 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<vector>
+#include<sstream>
 #define MAXSIZE 5000
 #define m 300
 using namespace std;
@@ -373,8 +377,8 @@ int main()
 {
     SqList L;
     InitList(L);
-    string infoFilename = "/data/workspace/myshixun/stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
+    string infoFilename = "data/stocks.txt";
+    string detailDir = "data//detail";
     ReadFile(L, infoFilename, detailDir);
 
     BiTree BT;

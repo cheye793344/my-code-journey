@@ -1,4 +1,9 @@
-#include <bits/stdc++.h>
+#include<string>
+#include<iostream>
+#include<fstream>
+#include<vector>
+#include<sstream>
+#include<iomanip>
 #define MAXSIZE 5000
 using namespace std;
 
@@ -251,12 +256,14 @@ void Print(SqList L, int pos) {
     }
 }
 
+
+
 //#include "1-股票基本信息的存储.h" 
 int main() {
     SqList L;
     InitList(L);
-    string infoFilename = "/data/workspace/myshixun/stocks.txt";
-    string detailDir = "/data/workspace/myshixun/detail";
+    string infoFilename = "data/stocks.txt";
+    string detailDir = "data/detail";
     ReadFile(L, infoFilename, detailDir);
     int pos;
     cin >> pos;

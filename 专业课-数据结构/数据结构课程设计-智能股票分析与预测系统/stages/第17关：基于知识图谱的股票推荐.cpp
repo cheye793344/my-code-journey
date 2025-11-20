@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<vector>
+#include <set>
 #define MVNum 30000
 using namespace std;
 
@@ -221,8 +225,8 @@ void SearchByEntity(ALGraph& G, const string& entityName) {
 int main() {
     ALGraph G;
     InitALGraph(G);
-    CreateAdjList(G, "/data/workspace/myshixun/entity.txt");
-    CreateUDG(G, "/data/workspace/myshixun/relation.txt");
+    CreateAdjList(G, "data/entity.txt");
+    CreateUDG(G, "data/relation.txt");
     string entityToSearch;
     cin >> entityToSearch;
     SearchByEntity(G, entityToSearch);

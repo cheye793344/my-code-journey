@@ -1,12 +1,16 @@
-#include<iostream>
+#include "StockSearch.h"
+#include "MenuSystem.h"
+#include <iostream>
+#include <string>
+#include <cstring>
+#include<limits>
 
-#define MAXSIZE 10000
 using namespace std;
 
+// 复用第14关的BF算法
 int BF(const char* S, const char* T, int pos) {
-    // 基于BF算法将输入的模式串与文本进行匹配
-    int i = pos;  // 主串指针
-    int j = 0;    // 模式串指针
+    int i = pos;
+    int j = 0;
     int sLen = strlen(S);
     int tLen = strlen(T);
 
@@ -16,22 +20,22 @@ int BF(const char* S, const char* T, int pos) {
             j++;
         }
         else {
-            i = i - j + 1;  // 主串回溯到下一个位置
-            j = 0;          // 模式串回到开头
+            i = i - j + 1;
+            j = 0;
         }
     }
 
     if (j >= tLen) {
-        return i - tLen;    // 返回匹配的起始位置
+        return i - tLen;
     }
     else {
-        return -1;          // 匹配失败
+        return -1;
     }
 }
 
 // 判断是否为UTF-8中文字符的起始字节
 bool isChineseStartByte(unsigned char c) {
-    return (c & 0xE0) == 0xE0;  // UTF-8中文字符以1110xxxx开头
+    return (c & 0xE0) == 0xE0;
 }
 
 bool EntityRecognition(const char* S, const char* T) {
@@ -79,10 +83,6 @@ bool EntityRecognition(const char* S, const char* T) {
         bool validEntity = true;
         if (entityStart + entityByteLen <= text.length()) {
             for (int i = 0; i < entityByteLen; i += 3) {
-                if (i + 2 >= entityByteLen) {
-                    validEntity = false;
-                    break;
-                }
                 if (!isChineseStartByte((unsigned char)text[entityStart + i])) {
                     validEntity = false;
                     break;
@@ -121,18 +121,31 @@ bool EntityRecognition(const char* S, const char* T) {
     return found;
 }
 
-//#include "14-基于规则的股票实体智能识别.h"
+namespace StockFunctions {
+    void entityRecognition() {
+        MenuSystem menu;
+        system("cls");
+        cout << "==========================================" << endl;
+        cout << "   基于规则的股票信息实体识别" << endl;
+        cout << "==========================================" << endl;
 
-int main() {
-    char keyword[100];
-    char text[10000];
+        char keyword[100];
+        char text[10000];
 
-    // 使用getline来读取包含空格的文本
-    cin.getline(keyword, 100);
-    cin.getline(text, 10000);
+        cout << "请输入规则模式（使用*代表中文字符实体）: ";
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // 忽略缓冲区中所有字符，直到遇到换行符
+        cin.getline(keyword, 100);
+        
+        cout << "请输入待分析的文本: ";
+        cin.getline(text, 10000);
 
-    if (!EntityRecognition(text, keyword))
-        cout << "无匹配" << endl;
-    return 0;
+        cout << endl << "识别出的实体：" << endl;
+        cout << "------------------------------------------" << endl;
+
+        if (!EntityRecognition(text, keyword)) {
+            cout << "无匹配" << endl;
+        }
+
+        menu.showMessage("");
+    }
 }
-
