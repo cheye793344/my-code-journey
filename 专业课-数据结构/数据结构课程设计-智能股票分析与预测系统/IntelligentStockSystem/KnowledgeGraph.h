@@ -1,9 +1,11 @@
 // KnowledgeGraph.h
 #pragma once
+
+
 #include <string>
 
+//#define MVNum 30000
 #define MVNum 30000
-
 // 声明全局变量为 extern
 extern std::string Relationship[];
 extern std::string Entity[];
