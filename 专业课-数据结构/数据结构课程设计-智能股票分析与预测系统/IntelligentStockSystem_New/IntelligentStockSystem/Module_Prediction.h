@@ -232,20 +232,22 @@ namespace Level_18 {
     }
     void run() {
         cout << "=== 功能：基于皮尔逊相关系数的指标重要性分析 ===" << endl;
-        cout << "请输入数据文件名(例如 data/detail/000001.txt): ";
+        //cout << "请输入数据文件名(例如 data/detail/000001.txt): ";
         // ...
         StockDetail detailsList[MAX_STOCK_DATA];
         int labels[MAX_LABELS];
         string inputFile;
+        
         int detailCount = 0;
         int labelCount = 0;
-
+        cout << "请输入数据文件名(例如cn_000007.txt): " << endl;
         cin >> inputFile;
-
-        if (!LoadStockFromFile(inputFile, detailsList, detailCount)) {
+        string filename = "data/detail/" + inputFile;
+        if (!LoadStockFromFile(filename, detailsList, detailCount)) {
             cerr << "Error: 数据读取失败或有效数据量不足" << endl;
             return;
         }
+        
         CreatePriceLabels(detailsList, detailCount, labels, labelCount);
 
         if (labelCount == 0) {
@@ -558,9 +560,12 @@ namespace Level_19 {
         cout << "请输入训练数据文件: ";
         // ...
         string inputFile;
-        getline(cin, inputFile);
+        cout << "请输入数据文件名(例如2_cn_000007.txt): " << endl;
+        cin >> inputFile;
+        string filename = "data/" + inputFile;
+        //getline(cin, inputFile);
         Sample allSamples[MAX_SAMPLES];
-        int sampleCount = LoadTrainData(inputFile, allSamples);
+        int sampleCount = LoadTrainData(filename, allSamples);
         if (sampleCount < 2) {
             cerr << "数据量不足，至少需要2条数据！" << endl;
             return;
@@ -869,9 +874,11 @@ namespace Level_20 {
         int dayCount = 0;
 
         string inputFile;
-        getline(cin, inputFile);
-
-        if (!LoadDataFromFile(inputFile, days, dayCount, labels)) {
+        //getline(cin, inputFile);
+        cout << "请输入数据文件名(例如2_cn_000007.txt): " << endl;
+        cin >> inputFile;
+        string filename = "data/" + inputFile;
+        if (!LoadDataFromFile(filename, days, dayCount, labels)) {
             cerr << "错误：数据加载失败，程序退出" << endl;
             return;
         }

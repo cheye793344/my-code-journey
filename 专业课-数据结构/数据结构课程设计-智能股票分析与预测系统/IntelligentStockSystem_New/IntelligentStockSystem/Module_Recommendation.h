@@ -873,11 +873,14 @@ namespace Level_16 {
         cout << "=== 功能：基于邻接表的股票知识图谱构建 ===" << endl;
         // 修改代码中的 filename 为 "data/entity.txt" 等
         // ...
-        ALGraph G;
-        InitALGraph(G);
-        CreateAdjList(G, "data/entity.txt");
-        CreateUDG(G, "data/relation.txt");
-        PrintGraph(G);
+        ALGraph* pG = new ALGraph();
+        InitALGraph(*pG);
+        CreateAdjList(*pG, "data/entity.txt");
+        cout << "读取实体完毕，当前顶点数: " << pG->vexnum << endl; // 重点看这里是不是 0
+        CreateUDG(*pG, "data/relation.txt");
+        cout << "读取关系完毕，当前边数: " << pG->arcnum << endl;
+        PrintGraph(*pG);
+        delete pG;
     }
 }
 
@@ -1103,14 +1106,17 @@ namespace Level_17 {
         cout << "=== 功能：基于知识图谱的股票推荐 ===" << endl;
         
         // ...
-        ALGraph G;
-        InitALGraph(G);
-        CreateAdjList(G, "data/entity.txt");
-        CreateUDG(G, "data/relation.txt");
+        ALGraph *pG = new ALGraph();
+        InitALGraph(*pG);
+        //cout << "正在初始化知识图谱..." << endl;
+        CreateAdjList(*pG, "data/entity.txt");
+        cout << "读取实体完毕，当前顶点数: " << pG->vexnum << endl; // 重点看这里是不是 0
+        CreateUDG(*pG, "data/relation.txt");
+        cout << "读取关系完毕，当前边数: " << pG->arcnum << endl;
         string entityToSearch;
         cout << "请输入实体名称: ";
         cin >> entityToSearch;
-        SearchByEntity(G, entityToSearch);
-
+        SearchByEntity(*pG, entityToSearch);
+        delete pG;
     }
 }
