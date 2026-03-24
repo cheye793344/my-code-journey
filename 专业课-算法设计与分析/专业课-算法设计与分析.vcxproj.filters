@@ -18,5 +18,8 @@
     <ClCompile Include="Simple Counting.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Remove Duplicate Characters.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
