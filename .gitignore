@@ -398,3 +398,9 @@ FodyWeavers.xsd
 
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
+
+# Visual Studio 2019
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
