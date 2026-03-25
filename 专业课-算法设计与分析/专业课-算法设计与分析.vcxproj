@@ -139,8 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Count of Inversion Pairs.cpp" />
+    <ClCompile Include="Fantastic Endfield Industry (Optional).cpp" />
+    <ClCompile Include="Prime.cpp" />
     <ClCompile Include="Simple Counting.cpp" />
     <ClCompile Include="Remove Duplicate Characters.cpp" />
+    <ClCompile Include="The Singularity Cloning Experiment.cpp" />
+    <ClCompile Include="Signal Tower.cpp" />
+    <ClCompile Include="Tom%27s Game.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

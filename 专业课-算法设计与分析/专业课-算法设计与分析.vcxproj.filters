@@ -21,5 +21,23 @@
     <ClCompile Include="Remove Duplicate Characters.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="The Singularity Cloning Experiment.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Signal Tower.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Prime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Tom%27s Game.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Count of Inversion Pairs.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Fantastic Endfield Industry (Optional).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
