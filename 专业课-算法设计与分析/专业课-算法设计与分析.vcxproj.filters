@@ -39,5 +39,8 @@
     <ClCompile Include="Fantastic Endfield Industry (Optional).cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Winner of teams.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

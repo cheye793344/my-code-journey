@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int Counter() {
+void Counter() {
 	int n;
 	cin >> n; 
     vector<int> a(n);

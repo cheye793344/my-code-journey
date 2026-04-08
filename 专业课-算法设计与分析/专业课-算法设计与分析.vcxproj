@@ -147,6 +147,7 @@
     <ClCompile Include="The Singularity Cloning Experiment.cpp" />
     <ClCompile Include="Signal Tower.cpp" />
     <ClCompile Include="Tom%27s Game.cpp" />
+    <ClCompile Include="Winner of teams.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
